@@ -11,6 +11,7 @@ body::-webkit-scrollbar {
  body {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+    scroll-behavior: smooth;
   } 
   html {
     scrollbar-width: none;
@@ -76,3 +77,18 @@ header .search input::placeholder {
 main .banner{
     margin-top: 60px;
 }
+
+.product button {
+    background-color: #f80;
+    color: #fff;
+    border: none;
+    padding: 5px ;
+    cursor: pointer;
+    height: 40px;
+    width: 100px;
+  
+  }
+  
+  .product button:hover {
+    background-color: #f60;
+  }
