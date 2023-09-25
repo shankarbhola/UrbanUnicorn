@@ -12,7 +12,6 @@ body::-webkit-scrollbar {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
     scroll-behavior: smooth;
-     overflow-x: hidden;
   } 
   html {
     scrollbar-width: none;
