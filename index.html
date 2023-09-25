@@ -23,8 +23,8 @@
         </a>
 
         <form class="d-flex bg-light " onsubmit="inputvalidation()">
-          <input style="width: 50vw;" id="input" class="form-control me-2 rounded-0 bg-light border-0" type="text" 
-            placeholder="Enter Product Name ..." >
+          <input style="width: 50vw;" id="input" class="form-control me-2 rounded-0 bg-light border-0" type="text"
+            placeholder="Enter Product Name ...">
           <button class="btn " type="submit"><i class="fa fa-search"></i></button>
         </form>
 
@@ -337,11 +337,13 @@
       alert("Enter Product Name to Continue");
     }
     else if (input_val.value == "shirt") {
-      window.location.href = "search.html";
-      console.log("hii");
+      window.open("search.html");
+    }
+    else {
+      return false;
     }
   }
-  
+
 </script>
 
 </html>
