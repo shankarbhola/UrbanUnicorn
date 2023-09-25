@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=1024, initial-scale=1, maximum-scale=1, user-scalable=yes">
   <title>UrbanUnicorn</title>
   <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css">
   <link rel="stylesheet" href="assets/style.css">
   <link rel="icon" href="assets/logo.png" type="image/x-icon">
@@ -21,9 +22,9 @@
             style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">URBAN UNICORN</span>
         </a>
 
-        <form class="d-flex bg-light " role="search" action="search.html">
-          <input style="width: 50vw;" class="form-control me-2 rounded-0 bg-light border-0" type="search"
-            placeholder="Enter Product Name ..." aria-label="Search">
+        <form class="d-flex bg-light " onsubmit="inputvalidation()">
+          <input style="width: 50vw;" id="input" class="form-control me-2 rounded-0 bg-light border-0" type="text" 
+            placeholder="Enter Product Name ..." >
           <button class="btn " type="submit"><i class="fa fa-search"></i></button>
         </form>
 
@@ -71,7 +72,7 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Sign-Up</h1>
+                <h1 class="modal-title fs-5">Sign-Up</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
@@ -83,11 +84,11 @@
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label"> Enter Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="email" class="form-control" aria-describedby="emailHelp">
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <input type="password" class="form-control">
                   </div>
                   <button type="submit" class="btn btn-primary">Register</button>
                 </form>
@@ -101,7 +102,7 @@
     </nav>
   </header>
 
-  <main  style="background-color: #dddddd;">
+  <main style="background-color: #dddddd;">
     <div id="carouselExampleInterval " class="carousel slide mt-3 " data-bs-ride="carousel">
       <div class="carousel-inner" style="height: 230px; width: 100vw;">
         <div class="carousel-item active" data-bs-interval="2500">
@@ -114,7 +115,7 @@
           <img src="assets/images/banner3.jpg" class="d-block w-100" alt="...">
         </div>
       </div>
-      
+
     </div>
 
 
@@ -124,157 +125,176 @@
       <div class=" text-first ">
         <div class="row product " style="width: 100vw;">
           <div class="col mt-4">
-  
+
             <div class="card" style="width: 18rem; text-align: center;">
               <img src="assets/images/1.jpg" class="card-img-top" alt="..." style="height: 250px; width: 286px;">
               <div class="card-body ">
-                <p class="card-text" style="height: 60px;">Noise Pulse 2 Max Bluetooth Calling Smart Watch (Midnight Blue)</p>
-                <b><sup>₹</sup><span style="font-size: larger;">1,599</span></b> <span style="color: grey; text-decoration: line-through;">₹5,999</span>
+                <p class="card-text" style="height: 60px;">Noise Pulse 2 Max Bluetooth Calling Smart Watch (Midnight
+                  Blue)</p>
+                <b><sup>₹</sup><span style="font-size: larger;">1,599</span></b> <span
+                  style="color: grey; text-decoration: line-through;">₹5,999</span>
                 <button class="b1">Buy Now</button>
               </div>
             </div>
-  
+
           </div>
           <div class="col mt-4">
-  
+
             <div class="card" style="width: 18rem; text-align: center;">
-              <img src="assets/images/2.jpg" class="card-img-top" alt="..."style="height: 250px; width: 286px;">
+              <img src="assets/images/2.jpg" class="card-img-top" alt="..." style="height: 250px; width: 286px;">
               <div class="card-body">
-                <p class="card-text" style="height: 60px;">Daikin 1.8 Ton 3 Star Inverter Split AC (Copper, Anti Bacterial Filter, ATKL60UV16, White)</p>
-                <b><sup>₹</sup><span style="font-size: larger;">49,499</span></b> <span style="color: grey; text-decoration: line-through;">₹72,900</span>
+                <p class="card-text" style="height: 60px;">Daikin 1.8 Ton 3 Star Inverter Split AC (Copper, Anti
+                  Bacterial Filter, ATKL60UV16, White)</p>
+                <b><sup>₹</sup><span style="font-size: larger;">49,499</span></b> <span
+                  style="color: grey; text-decoration: line-through;">₹72,900</span>
                 <button class="b1">Buy Now</button>
               </div>
             </div>
-  
+
           </div>
           <div class="col mt-4">
-  
+
             <div class="card" style="width: 18rem; text-align: center; text-align: center;">
               <img src="assets/images/3.jpg" class="card-img-top " alt="..." style="height: 250px; width: 286px;">
               <div class="card-body">
                 <p class="card-text" style="height: 60px;">OnePlus 11 5G (Eternal Green, 16GB RAM, 256GB Storage)</p>
-                <b><sup>₹</sup><span style="font-size: larger;">59,499</span></b> <span style="color: grey; text-decoration: line-through;">₹61,999</span>
+                <b><sup>₹</sup><span style="font-size: larger;">59,499</span></b> <span
+                  style="color: grey; text-decoration: line-through;">₹61,999</span>
                 <button class="b1">Buy Now</button>
               </div>
             </div>
-  
+
           </div>
           <div class="col mt-4">
             <div class="card" style="width: 18rem; text-align: center;">
-              <img src="assets/images/4.jpg" class="card-img-top" alt="..."style="height: 250px; width: 286px;">
+              <img src="assets/images/4.jpg" class="card-img-top" alt="..." style="height: 250px; width: 286px;">
               <div class="card-body">
-                <p class="card-text" style="height: 60px;">MSI Curved Quad HD LED Backlit34 Inch (86.36 cm) Curved Gaming LCD Monitor</p>
-                <b><sup>₹</sup><span style="font-size: larger;">42,999</span></b> <span style="color: grey; text-decoration: line-through;">₹66,999</span>
+                <p class="card-text" style="height: 60px;">MSI Curved Quad HD LED Backlit34 Inch (86.36 cm) Curved
+                  Gaming LCD Monitor</p>
+                <b><sup>₹</sup><span style="font-size: larger;">42,999</span></b> <span
+                  style="color: grey; text-decoration: line-through;">₹66,999</span>
                 <button class="b1">Buy Now</button>
               </div>
             </div>
           </div>
-  
+
           <div class="col mt-4">
-  
+
             <div class="card" style="width: 18rem; text-align: center;">
-              <img src="assets/images/5.jpg" class="card-img-top" alt="..."style="height: 250px; width: 286px;">
+              <img src="assets/images/5.jpg" class="card-img-top" alt="..." style="height: 250px; width: 286px;">
               <div class="card-body">
-                <p class="card-text" style="height: 60px;">ASUS Zenbook 17 Fold OLED, Intel EVO Core i7 12th Gen, 17" (43.94 cm)(16GB/1TB SSD/Windows 11)</p>
-                <b><sup>₹</sup><span style="font-size: larger;">3,29,990</span></b> 
+                <p class="card-text" style="height: 60px;">ASUS Zenbook 17 Fold OLED, Intel EVO Core i7 12th Gen, 17"
+                  (43.94 cm)(16GB/1TB SSD/Windows 11)</p>
+                <b><sup>₹</sup><span style="font-size: larger;">3,29,990</span></b>
                 <!-- <span style="color: grey; text-decoration: line-through;">₹3,62,990</span> -->
                 <button class="b1">Buy Now</button>
               </div>
             </div>
-  
+
           </div>
 
-          
+
           <div class="col mt-4">
-  
+
             <div class="card" style="width: 18rem; text-align: center;">
-              <img src="assets/images/6.jpg" class="card-img-top" alt="..."style="height: 250px; width: 286px;">
+              <img src="assets/images/6.jpg" class="card-img-top" alt="..." style="height: 250px; width: 286px;">
               <div class="card-body">
                 <p class="card-text" style="height: 60px;">ASIAN Men's Wonder-13 Sports Running Shoes</p>
-                <b><sup>₹</sup><span style="font-size: larger;">599</span></b> <span style="color: grey; text-decoration: line-through;">₹699</span>
+                <b><sup>₹</sup><span style="font-size: larger;">599</span></b> <span
+                  style="color: grey; text-decoration: line-through;">₹699</span>
                 <button class="b1">Buy Now</button>
               </div>
             </div>
-  
+
           </div>
           <div class="col mt-4">
-  
+
             <div class="card" style="width: 18rem; text-align: center;">
-              <img src="assets/images/7.jpg" class="card-img-top" alt="..."style="height: 250px; width: 286px;">
+              <img src="assets/images/7.jpg" class="card-img-top" alt="..." style="height: 250px; width: 286px;">
               <div class="card-body">
-                <p class="card-text" style="height: 60px;">Canon EOS 6D Mark II 26.2MP Digital SLR Camera with EF24-105 mm f/4L is II USM Lens [Black]</p>
-                <b><sup>₹</sup><span style="font-size: larger;">1,69,990</span></b> 
+                <p class="card-text" style="height: 60px;">Canon EOS 6D Mark II 26.2MP Digital SLR Camera with EF24-105
+                  mm f/4L is II USM Lens [Black]</p>
+                <b><sup>₹</sup><span style="font-size: larger;">1,69,990</span></b>
                 <!-- <span style="color: grey; text-decoration: line-through;">₹899</span> -->
                 <button class="b1">Buy Now</button>
               </div>
             </div>
-  
+
           </div>
           <div class="col mt-4 mb-3">
-  
+
             <div class="card" style="width: 18rem; text-align: center;">
-              <img src="assets/images/8.jpg" class="card-img-top" alt="..."style="height: 250px; width: 286px;">
+              <img src="assets/images/8.jpg" class="card-img-top" alt="..." style="height: 250px; width: 286px;">
               <div class="card-body">
-                <p class="card-text" style="height: 60px;">Echo Dot (4th Gen, 2020 release) with LED display clock and Alexa (Blue)</p>
-                <b><sup>₹</sup><span style="font-size: larger;">5,499</span></b> <span style="color: grey; text-decoration: line-through;">₹6,899</span>
+                <p class="card-text" style="height: 60px;">Echo Dot (4th Gen, 2020 release) with LED display clock and
+                  Alexa (Blue)</p>
+                <b><sup>₹</sup><span style="font-size: larger;">5,499</span></b> <span
+                  style="color: grey; text-decoration: line-through;">₹6,899</span>
                 <button class="b1">Buy Now</button>
               </div>
             </div>
-  
+
           </div>
           <div class="col mt-4">
-  
+
             <div class="card" style="width: 18rem; text-align: center;">
-              <img src="assets/images/9.jpg" class="card-img-top" alt="..."style="height: 250px; width: 286px;">
+              <img src="assets/images/9.jpg" class="card-img-top" alt="..." style="height: 250px; width: 286px;">
               <div class="card-body">
                 <p class="card-text" style="height: 60px;">Vault DA20 Dreadnought Acoustic Guitar </p>
-                <b><sup>₹</sup><span style="font-size: larger;">4,899</span></b> <span style="color: grey; text-decoration: line-through;">₹10,000</span>
+                <b><sup>₹</sup><span style="font-size: larger;">4,899</span></b> <span
+                  style="color: grey; text-decoration: line-through;">₹10,000</span>
                 <button class="b1">Buy Now</button>
               </div>
             </div>
-  
+
           </div>
           <div class="col mt-4">
-  
+
             <div class="card" style="width: 18rem; text-align: center;">
-              <img src="assets/images/10.jpg" class="card-img-top" alt="..."style="height: 250px; width: 286px;">
+              <img src="assets/images/10.jpg" class="card-img-top" alt="..." style="height: 250px; width: 286px;">
               <div class="card-body">
-                <p class="card-text" style="height: 60px;">JBL Bar 2.1 Deep Bass, Dolby Digital, HDMI ARC, Bluetooth & Optical Connectivity (300W)</p>
-                <b><sup>₹</sup><span style="font-size: larger;">23,999</span></b> <span style="color: grey; text-decoration: line-through;">₹28,999</span>
+                <p class="card-text" style="height: 60px;">JBL Bar 2.1 Deep Bass, Dolby Digital, HDMI ARC, Bluetooth &
+                  Optical Connectivity (300W)</p>
+                <b><sup>₹</sup><span style="font-size: larger;">23,999</span></b> <span
+                  style="color: grey; text-decoration: line-through;">₹28,999</span>
                 <button class="b1">Buy Now</button>
               </div>
             </div>
-  
+
           </div>
 
           <div class="col mt-4">
-  
+
             <div class="card" style="width: 18rem; text-align: center;">
-              <img src="assets/images/11.jpg" class="card-img-top" alt="..."style="height: 250px; width: 286px;">
+              <img src="assets/images/11.jpg" class="card-img-top" alt="..." style="height: 250px; width: 286px;">
               <div class="card-body">
-                <p class="card-text" style="height: 60px;">Western Digital WD 1TB My Passport Hard Disk Drive, USB 3.0 , External HDD-Black</p>
-                <b><sup>₹</sup><span style="font-size: larger;">5,199</span></b> <span style="color: grey; text-decoration: line-through;">₹8,999</span>
+                <p class="card-text" style="height: 60px;">Western Digital WD 1TB My Passport Hard Disk Drive, USB 3.0 ,
+                  External HDD-Black</p>
+                <b><sup>₹</sup><span style="font-size: larger;">5,199</span></b> <span
+                  style="color: grey; text-decoration: line-through;">₹8,999</span>
                 <button class="b1">Buy Now</button>
               </div>
             </div>
-  
-          </div>
-          
-          <div class="col mt-4">
-  
-            <div class="card" style="width: 18rem; text-align: center;">
-              <img src="assets/images/12.jpg" class="card-img-top" alt="..."style="height: 250px; width: 286px;">
-              <div class="card-body">
-                <p class="card-text" style="height: 60px;">Bella Vita Luxury Woman Eau De Parfum Gift Set 4x20 ml for Women</p>
-                <b><sup>₹</sup><span style="font-size: larger;">899</span></b> <span style="color: grey; text-decoration: line-through;">₹899</span>
-                <button class="b1">Buy Now</button>
-              </div>
-            </div>
-  
+
           </div>
 
-          
-  
+          <div class="col mt-4">
+
+            <div class="card" style="width: 18rem; text-align: center;">
+              <img src="assets/images/12.jpg" class="card-img-top" alt="..." style="height: 250px; width: 286px;">
+              <div class="card-body">
+                <p class="card-text" style="height: 60px;">Bella Vita Luxury Woman Eau De Parfum Gift Set 4x20 ml for
+                  Women</p>
+                <b><sup>₹</sup><span style="font-size: larger;">899</span></b> <span
+                  style="color: grey; text-decoration: line-through;">₹899</span>
+                <button class="b1">Buy Now</button>
+              </div>
+            </div>
+
+          </div>
+
+
+
         </div>
       </div>
     </div>
@@ -285,14 +305,16 @@
 
   <div class="container-fluid bg-success ">
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3   ">
-      <p class="col-md-4 mb-0 text-light" style="font-weight: 400;font-size: larger;">UrbanUnicorn &copy All rights reserved.</p>
-  
-      <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-        <img class="bi me-2 bg-success " width="50" height="40" src="assets/logo.png" alt="" >
+      <p class="col-md-4 mb-0 text-light" style="font-weight: 400;font-size: larger;">UrbanUnicorn &copy All rights
+        reserved.</p>
+
+      <a href="/"
+        class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+        <img class="bi me-2 bg-success " width="50" height="40" src="assets/logo.png" alt="">
         <span class="text-light fs-3"
-            style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">URBAN UNICORN</span>
+          style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">URBAN UNICORN</span>
       </a>
-  
+
       <ul class="nav col-md-4 justify-content-end ">
         <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Features</a></li>
@@ -303,9 +325,23 @@
     </footer>
   </div>
 
-  
+
 
 </body>
-<script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  let input_val = document.getElementById('input');
+
+  function inputvalidation() {
+    if (input_val.value == "") {
+      alert("Enter Product Name to Continue");
+    }
+    else if (input_val.value == "shirt") {
+      window.location.href = "search.html";
+      console.log("hii");
+    }
+  }
+  
+</script>
 
 </html>
