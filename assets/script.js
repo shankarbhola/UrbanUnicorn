@@ -5,9 +5,9 @@ function inputvalidation() {
     alert("Enter Product Name to Continue");
   }
   else if (input_val.value == "shirt") {
-    window.open("search.html");
+    window.open("shirt.html");
   }
   else {
-    return false;
+    window.open("noresult.html");
   }
 }
