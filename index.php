@@ -1,3 +1,7 @@
+<?php
+include("loginserv.php"); // Include loginserv for checking username and password
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +17,7 @@
 </head>
 
 <body>
+  
   <header style="width: 100vw;">
     <nav class="navbar navbar-expand-lg bg-success" style="width: 100vw;">
       <div class="container-fluid">
@@ -23,7 +28,7 @@
         </a>
 
         <form class="d-flex bg-light " onsubmit="inputvalidation()">
-          <input style="width: 50vw;" id="input" class="form-control me-2 rounded-0 bg-light border-0" type="text"
+          <input style="width: 50vw;" id="inputitem" class="form-control me-2 rounded-0 bg-light border-0" type="text"
             placeholder="Enter Product Name ...">
           <button class="btn " type="submit"><i class="fa fa-search"></i></button>
         </form>
@@ -31,30 +36,32 @@
 
 
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-outline-light  login-bth" data-bs-toggle="modal"
+        <button type="button" class="btn btn-outline-light login-bth" id="modalloginbtn" data-bs-toggle="modal"
           data-bs-target="#loginModal">
           Login
         </button>
         <!-- Login Modal -->
-        <div class="modal fade " id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade " id="loginModal" tabindex="-1" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+                <h1 class="modal-title fs-5">Login</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 <!-- form -->
-                <form>
+                <form action="" method="post">
                   <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <label class="form-label">Username</label>
+                    <input type="text" class="form-control" id="user_name" name="user_name" minlength="1">
                   </div>
                   <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <label  class="form-label">Password</label>
+                    <input onsu type="password" class="form-control" id="password" name="password" minlength="1">
+            
                   </div>
-                  <button type="submit" class="btn btn-primary">Login</button>
+                  <input class="btn btn-primary" type="submit" id="login" value="Login" name="login" onclick="loginevalue()">
+                  
                 </form>
                 Dont have an account?
                 <a type="button" class="" style="text-decoration: none;" data-bs-toggle="modal"
@@ -68,7 +75,7 @@
 
 
         <!-- Signup Modal -->
-        <div class="modal fade " id="signupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade " id="signupModal" tabindex="-1"  aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -77,21 +84,23 @@
               </div>
               <div class="modal-body">
                 <!-- form -->
-                <form>
+                <form action="" method="post">
                   <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label"> Enter Name</label>
-                    <input type="text" class="form-control" aria-describedby="emailHelp">
+                  <label class="form-label">Username</label>
+                    <input type="text" class="form-control" id="ruid" name="ruid" minlength="1">
                   </div>
                   <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label"> Enter Email address</label>
-                    <input type="email" class="form-control" aria-describedby="emailHelp">
+                  <label class="form-label">Password</label>
+                    <input type="text" class="form-control" id="rpwd" name="rpwd" minlength="1">
                   </div>
-                  <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control">
-                  </div>
-                  <button type="submit" class="btn btn-primary">Register</button>
+                  <input class="btn btn-primary" type="submit" id="register" value="register" name="register" onclick="registervalidation()">
+                  
                 </form>
+                Have an account?
+                <a type="button" class="" style="text-decoration: none;" data-bs-toggle="modal"
+                  data-bs-target="#loginModal">
+                  Login
+                </a>
               </div>
             </div>
           </div>
@@ -103,7 +112,7 @@
   </header>
 
   <main style="background-color: #dddddd;">
-    <div id="carouselExampleInterval " class="carousel slide mt-3 " data-bs-ride="carousel">
+    <div class="carousel slide mt-3 " data-bs-ride="carousel">
       <div class="carousel-inner" style="height: 230px; width: 100vw;">
         <div class="carousel-item active" data-bs-interval="2500">
           <img src="assets/images/banner1.jpg" class="d-block w-100" alt="...">
@@ -113,6 +122,9 @@
         </div>
         <div class="carousel-item" data-bs-interval="2500">
           <img src="assets/images/banner3.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="2500">
+          <img src="assets/images/banner4.jpg" class="d-block w-100" alt="...">
         </div>
       </div>
 
@@ -330,5 +342,19 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/script.js"></script>
+<script>
+  function inputvalidation() {
+  let input_val = document.getElementById('inputitem');
+  if (input_val.value == "") {
+    alert("Enter Product Name to Continue");
+  }
+  else if (input_val.value == "shirt") {
+    window.open("shirt.html");
+  }
+  else {
+    window.open("noresult.html");
+  }
+}
+</script>
 
 </html>
